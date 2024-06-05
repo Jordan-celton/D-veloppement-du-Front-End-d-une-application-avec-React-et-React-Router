@@ -1,6 +1,6 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
-import logo from "../assets/logo.png";
+import logo from "../assets/logo/logo.png";
 
 const Navigation = () => {
   return (
@@ -16,7 +16,7 @@ const Navigation = () => {
           to="/about"
           className={(nav) => (nav.isActive ? "nav-active" : "")}
         >
-          <li>A propos</li>
+          <li>A Propos</li>
         </NavLink>
       </ul>
     </nav>

@@ -1,0 +1,26 @@
+footer {
+    width: calc(100% + 80px);
+    margin-left: -40px;
+    margin-right: -40px;
+    background-color: $background-color;
+    padding: 20px;
+    text-align: center;
+}
+
+.logo_footer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+    background-color: $background-color;
+}
+
+.logo_footer img {
+    color: $color-2;
+}
+
+.logo_footer p {
+    color: $color-2;
+    margin-top: 30px;
+}
