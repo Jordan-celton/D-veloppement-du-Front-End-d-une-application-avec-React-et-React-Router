@@ -1,0 +1,36 @@
+.pictures {
+    overflow: hidden; // Pour cacher les images qui dépassent
+    position: relative; // Pour positionner les flèches de navigation par rapport à ce conteneur
+
+    .carousel-inner {
+        display: flex; // Utilisation de flexbox pour afficher les images horizontalement
+        transition: transform 0.5s ease; // Animation de transition pour le défilement en douceur
+    }
+
+    img {
+        max-width: 100%;
+        height: auto;
+        border-radius: 5px;
+    }
+}
+
+button.prev,
+button.next {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    border: none;
+    cursor: pointer;
+    padding: 10px;
+    z-index: 1;
+}
+
+button.prev {
+    left: 0;
+}
+
+button.next {
+    right: 0;
+}
