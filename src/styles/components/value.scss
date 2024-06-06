@@ -5,19 +5,29 @@
 
 .value-item {
     background-color: $color-1;
-    margin-bottom: 20px;
+    margin-top: 20px;
     padding: 5px 10px;
+    display: flex;
+    flex-direction: column;
+    border-radius: 5px;
+    width: 100%;
+}
+
+.value-header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    border-radius: 5px;
 }
 
 .arrow {
-    margin-left: 10px;
     width: 24px;
     height: 24px;
     cursor: pointer;
+    transition: transform 0.3s ease;
+}
+
+.rotate {
+    transform: rotate(180deg);
 }
 
 .value-text {
@@ -25,4 +35,24 @@
     font-family: $font-1;
     font-size: 18px;
     line-height: 24px;
+    flex: 1;
+}
+
+.collapse-container {
+    width: 100%;
+}
+
+.collapse-header {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+.collapse-content {
+    background: rgba(246, 246, 246, 1);
+    padding: 10px;
+    border-radius: 5px;
+    width: calc(100% - -20px); // Ajuste la largeur pour correspondre à la largeur du conteneur parent
+    box-sizing: border-box;
+    font-family: $font-1;
 }
