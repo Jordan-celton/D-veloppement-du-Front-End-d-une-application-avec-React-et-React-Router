@@ -1,0 +1,28 @@
+.value-list {
+    list-style-type: none;
+    padding: 10px 60px;
+}
+
+.value-item {
+    background-color: $color-1;
+    margin-bottom: 20px;
+    padding: 5px 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-radius: 5px;
+}
+
+.arrow {
+    margin-left: 10px;
+    width: 24px;
+    height: 24px;
+    cursor: pointer;
+}
+
+.value-text {
+    color: $color-2;
+    font-family: $font-1;
+    font-size: 18px;
+    line-height: 24px;
+}
