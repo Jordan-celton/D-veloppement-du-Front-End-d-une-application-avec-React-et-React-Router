@@ -1,0 +1,37 @@
+.error-page {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    text-align: center;
+
+    h1,
+    p {
+        color: $color-1;
+        font-family: $font-1;
+    }
+
+    h1 {
+        line-height: 410px;
+        font-size: 288px;
+    }
+
+    p {
+        font-size: 36px;
+        margin-bottom: 20px; // Ajouter un espace entre le texte et le lien
+    }
+
+    a {
+        display: inline-block;
+        margin-top: 20px;
+        padding: 10px 20px;
+        font-size: 1em;
+        color: black;
+        border-radius: 5px;
+        font-family: $font-1;
+        font-size: 18px;
+        line-height: 25px;
+        font-weight: bold;
+    }
+}
