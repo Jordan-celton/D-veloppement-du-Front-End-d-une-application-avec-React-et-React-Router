@@ -1,8 +1,9 @@
 import React from "react";
 import { useParams } from "react-router-dom";
-import logementsData from "../components/logements.json"; // Importation des données des logements
-import Navigation from "../components/Navigation"; // Importation du composant Navigation
-import Footer from "../components/Footer"; // Importation du composant Footer
+import logementsData from "../components/logements.json";
+import Navigation from "../components/Navigation";
+import Footer from "../components/Footer";
+import Slideshow from "../components/Slideshow";
 
 // Composant fonctionnel Logement
 const Logement = () => {
@@ -15,20 +16,12 @@ const Logement = () => {
   return (
     <div>
       <Navigation />
-      {/* Section des images du logement */}
-      <div className="pictures">
-        {logement.pictures.map((picture, index) => (
-          // Affichage de chaque image du logement
-          <img
-            key={index} // Clé unique pour chaque image
-            src={picture} // URL de l'image
-            alt={`Logement ${logement.id} - ${index}`} // Texte alternatif pour l'image
-          />
-        ))}
-      </div>
+      {/* Utilisation du composant Slideshow */}
+      <Slideshow pictures={logement.pictures} />
 
       <h2>{logement.title}</h2>
-
+      <p>{logement.location}</p>
+      <h3>Description</h3>
       <p>{logement.description}</p>
 
       <Footer />
