@@ -6,44 +6,52 @@
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
     gap: 20px;
     background: rgba(246, 246, 246, 1);
+}
 
-    ul {
-        margin: 40px;
+.cards ul {
+    margin: 40px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 40px;
+}
+
+.cards li {
+    background-size: cover;
+    background-position: center;
+    border: 1px solid #ddd;
+    border-radius: 25px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    flex: 1 0 250px;
+    height: 300px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    position: relative;
+    overflow: hidden;
+    color: white;
+    font-family: $font-1;
+    cursor: pointer;
+    transition: transform 0.3s ease; /* Ajout de l'effet de transition */
+
+    h3 {
+        background: rgba(0, 0, 0, 0.5);
+        padding: 10px 20px;
+        width: 100%;
+        text-align: center;
+        position: absolute;
+        bottom: 0;
+        margin: 0;
+        box-sizing: border-box;
+        max-height: 40%;
+        overflow: hidden;
         display: flex;
-        flex-wrap: wrap;
-        gap: 40px;
+        align-items: center;
+        justify-content: center;
     }
 
-    li {
-        background-size: cover;
-        background-position: center;
-        border: 1px solid #ddd;
-        border-radius: 25px;
-        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-        flex: 1 0 250px;
-        height: 300px;
-        display: flex;
-        flex-direction: column;
-        justify-content: flex-end;
-        position: relative;
-        overflow: hidden;
-        color: white;
-        font-family: $font-1;
-
-        h3 {
-            background: rgba(0, 0, 0, 0.5);
-            padding: 10px 20px;
-            width: 100%;
-            text-align: center;
-            position: absolute;
-            bottom: 0;
-            margin: 0;
-            box-sizing: border-box;
-            max-height: 40%;
-            overflow: hidden;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
+    &:hover {
+        opacity: 0.8;
+        transform: translateY(-5px);
+        box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
     }
 }
