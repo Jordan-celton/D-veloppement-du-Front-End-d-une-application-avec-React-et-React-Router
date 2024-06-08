@@ -1,8 +1,7 @@
-// Slideshow.js
-import React, { useEffect, useRef } from "react";
+import React, { useEffect, useRef, useState } from "react";
 
 const Slideshow = ({ pictures }) => {
-  const slideIndex = useRef(0);
+  const [currentSlide, setCurrentSlide] = useState(0);
   const slideshowContainer = useRef(null);
 
   useEffect(() => {
@@ -11,46 +10,55 @@ const Slideshow = ({ pictures }) => {
 
     const showSlides = (n) => {
       const slides = slideshowContainer.current.querySelectorAll(".slide");
-      if (n >= slides.length) slideIndex.current = 0;
-      if (n < 0) slideIndex.current = slides.length - 1;
+      if (n >= slides.length) setCurrentSlide(0);
+      if (n < 0) setCurrentSlide(slides.length - 1);
       slides.forEach((slide, index) => {
-        slide.style.display = index === slideIndex.current ? "block" : "none";
+        slide.style.display = index === currentSlide ? "block" : "none";
       });
     };
 
     const nextSlide = () => {
-      slideIndex.current++;
-      showSlides(slideIndex.current);
+      setCurrentSlide((prevSlide) => {
+        const newSlide = prevSlide + 1;
+        showSlides(newSlide);
+        return newSlide >= pictures.length ? 0 : newSlide;
+      });
     };
 
     const prevSlide = () => {
-      slideIndex.current--;
-      showSlides(slideIndex.current);
+      setCurrentSlide((prevSlide) => {
+        const newSlide = prevSlide - 1;
+        showSlides(newSlide);
+        return newSlide < 0 ? pictures.length - 1 : newSlide;
+      });
     };
 
     nextButton.addEventListener("click", nextSlide);
     prevButton.addEventListener("click", prevSlide);
 
-    showSlides(slideIndex.current);
+    showSlides(currentSlide);
 
     return () => {
       nextButton.removeEventListener("click", nextSlide);
       prevButton.removeEventListener("click", prevSlide);
     };
-  }, []);
+  }, [currentSlide, pictures]);
 
   return (
-    <div className="slideshow" ref={slideshowContainer}>
+    <section className="slideshow" ref={slideshowContainer}>
       <button className="prev-slide">&#10094;</button>
       <div className="slides">
         {pictures.map((picture, index) => (
           <div key={index} className="slide">
-            <img src={picture} alt={`Slide ${index}`} />
+            <img src={picture} alt={`Diapositive ${index}`} />
+            <div className="caption">
+              {` ${currentSlide + 1} / ${pictures.length}`}
+            </div>
           </div>
         ))}
       </div>
       <button className="next-slide">&#10095;</button>
-    </div>
+    </section>
   );
 };
 

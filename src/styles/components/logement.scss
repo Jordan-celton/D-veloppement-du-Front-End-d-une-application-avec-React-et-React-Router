@@ -40,9 +40,6 @@ p {
         background-color: $color-1;
         font-weight: bold;
     }
-    img {
-        font-size: 24px;
-    }
 }
 
 span {
@@ -50,8 +47,8 @@ span {
 }
 
 .star {
-    width: 24px; /* Taille des étoiles en pixels */
-    height: 24px; /* Taille des étoiles en pixels */
+    width: 20px; /* Taille des étoiles en pixels */
+    height: 20px; /* Taille des étoiles en pixels */
 }
 .arrow {
     margin-left: 10px; /* Ajustez la marge en fonction de vos besoins */

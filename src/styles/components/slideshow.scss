@@ -3,50 +3,63 @@
     width: 100%;
     margin: 0;
     overflow: hidden;
+}
 
-    .slides {
-        display: flex;
-        transition: transform 0.5s ease-in-out;
+.slideshow .slides {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+}
 
-        .slide {
-            display: none;
-            width: 100%;
-            text-align: center;
+.slideshow .slide {
+    display: none;
+    width: 100%;
+    text-align: center;
+    position: relative; /* Ensure the caption is positioned relative to the slide */
+}
 
-            img {
-                width: 100%;
-                height: 300px;
-                object-fit: cover;
-                border-radius: 25px;
-            }
-        }
+.slideshow .slide.active {
+    display: block;
+}
 
-        .slide.active {
-            display: block;
-        }
-    }
+.slideshow .slide img {
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+    border-radius: 25px;
+}
 
-    .prev-slide,
-    .next-slide {
-        position: absolute;
-        top: 50%;
-        transform: translateY(-50%);
-        background-color: transparent;
-        color: white;
-        border: none;
-        cursor: pointer;
-        padding: 10px;
-        z-index: 1;
-        font-size: 80px;
-    }
+.slideshow .caption {
+    position: absolute;
+    top: 90%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+    background-color: transparent;
+    padding: 10px 20px;
+    border-radius: 10px;
+    font-size: 20px;
+}
 
-    .prev-slide {
-        left: 10px;
-    }
+.slideshow .prev-slide,
+.slideshow .next-slide {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: transparent;
+    color: white;
+    border: none;
+    cursor: pointer;
+    padding: 10px;
+    z-index: 1;
+    font-size: 80px;
+}
 
-    .next-slide {
-        right: 10px;
-    }
+.slideshow .prev-slide {
+    left: 10px;
+}
+
+.slideshow .next-slide {
+    right: 10px;
 }
 
 @media (min-width: 768px) {
@@ -63,10 +76,11 @@
     .slideshow {
         margin: auto;
         max-width: 600px;
-        .prev-slide,
-        .next-slide {
-            font-size: 30px;
-        }
+    }
+
+    .slideshow .prev-slide,
+    .slideshow .next-slide {
+        font-size: 30px;
     }
 
     .slideshow .slides .slide img {
