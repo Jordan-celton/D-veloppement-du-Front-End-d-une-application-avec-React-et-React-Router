@@ -1,0 +1,18 @@
+.collapse-container {
+    width: 100%;
+    margin-bottom: 30px;
+}
+
+.collapse-header {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+.collapse-content {
+    background: rgba(246, 246, 246, 1);
+    padding: 10px;
+    border-radius: 5px;
+    box-sizing: border-box;
+    font-family: $font-1;
+}

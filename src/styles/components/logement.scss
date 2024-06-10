@@ -22,7 +22,15 @@ h3 {
 }
 
 p {
+    margin: 0;
     font-family: $font-1;
+}
+.logement-details {
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+    margin-top: 20px;
+    justify-content: space-between;
 }
 
 .tag {
@@ -31,6 +39,7 @@ p {
     flex-wrap: wrap;
     color: white;
     font-family: $font-1;
+    gap: 10px;
 
     li {
         font-family: $font-1;
@@ -47,13 +56,78 @@ span {
 }
 
 .star {
-    width: 20px; /* Taille des étoiles en pixels */
-    height: 20px; /* Taille des étoiles en pixels */
+    width: 20px;
+    height: 20px;
 }
+
 .arrow {
-    margin-left: 10px; /* Ajustez la marge en fonction de vos besoins */
+    margin-left: 10px;
     transition: transform 0.3s ease;
 }
+
 .arrow.rotated {
     transform: rotate(180deg);
+}
+
+.logement-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.host-info {
+    display: flex;
+    align-items: center;
+}
+
+.host-info img {
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    margin: 10px;
+}
+
+.host-info p {
+    color: $color-1;
+    font-size: 16px;
+}
+
+.stars {
+    display: flex;
+    margin-top: 10px;
+    gap: 10px;
+}
+
+@media (max-width: 768px) {
+    .logement-header {
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: flex-start;
+    }
+
+    .host-info {
+        display: flex;
+        align-items: center;
+        margin-bottom: 10px;
+    }
+
+    .stars {
+        width: auto;
+        margin-top: 0;
+    }
+
+    .collapse-container {
+        display: flex;
+        justify-content: space-between;
+        gap: 76px;
+        margin-bottom: 30px;
+    }
+
+    .collapse-container > div {
+        flex: 1;
+    }
+
+    .collapse-container > div:last-child {
+        margin-right: 0;
+    }
 }

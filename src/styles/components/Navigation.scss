@@ -68,11 +68,10 @@
 }
 
 @media (max-width: 768px) {
-  .navigation ul {
+  .navigation ul li {
     display: flex;
     justify-content: center;
     align-items: center;
-    gap: 10px;
     font-size: 15px;
   }
 }

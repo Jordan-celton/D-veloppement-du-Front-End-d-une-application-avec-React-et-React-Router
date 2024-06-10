@@ -5,7 +5,7 @@ import aboutData from "./about.json";
 const Value = () => {
   const [openIndexes, setOpenIndexes] = useState([]);
 
-  const toggleCollapse = (index) => {
+  const Collapse = (index) => {
     if (openIndexes.includes(index)) {
       setOpenIndexes(openIndexes.filter((i) => i !== index));
     } else {
@@ -31,7 +31,7 @@ const Value = () => {
                       ? "flèche qui pointe vers le haut"
                       : "flèche qui pointe vers le bas"
                   }
-                  onClick={() => toggleCollapse(index)}
+                  onClick={() => Collapse(index)}
                   aria-expanded={openIndexes.includes(index)}
                 />
               </div>
