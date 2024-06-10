@@ -39,14 +39,12 @@ const Slideshow = ({ pictures }) => {
         });
       };
 
-      // Ajouter les gestionnaires d'événements pour les boutons
       nextButton.addEventListener("click", nextSlide);
       prevButton.addEventListener("click", prevSlide);
 
       // Afficher la diapositive courante
       showSlides(currentSlide);
 
-      // Nettoyer les gestionnaires d'événements lors du démontage
       return () => {
         nextButton.removeEventListener("click", nextSlide);
         prevButton.removeEventListener("click", prevSlide);
@@ -62,7 +60,6 @@ const Slideshow = ({ pictures }) => {
         {pictures.map((picture, index) => (
           <div key={index} className="slide">
             <img src={picture} alt={`Diapositive ${index}`} />
-            {/* Afficher la légende si plus d'une diapositive */}
             {pictures.length > 1 && (
               <div className="caption">
                 {`${currentSlide + 1} / ${pictures.length}`}
@@ -71,7 +68,6 @@ const Slideshow = ({ pictures }) => {
           </div>
         ))}
       </div>
-      {/* Afficher le bouton suivant si plus d'une diapositive */}
       {pictures.length > 1 && <button className="next-slide">&#10095;</button>}
     </section>
   );

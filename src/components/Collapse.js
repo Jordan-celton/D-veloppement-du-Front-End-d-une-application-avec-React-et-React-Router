@@ -10,7 +10,7 @@ const Collapse = ({ title, content }) => {
   };
 
   return (
-    <div>
+    <div className="details">
       <div className="value-item">
         <div className="value-header" onClick={handleToggle}>
           <span className="value-text">{title}</span>

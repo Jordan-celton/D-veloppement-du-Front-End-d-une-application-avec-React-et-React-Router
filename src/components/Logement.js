@@ -36,14 +36,16 @@ const Logement = () => {
     <div>
       <Navigation />
       <Slideshow pictures={logement.pictures} />
-      <div className="logement-header">
-        <h2>{logement.title}</h2>
+      <section className="details-location">
+        <div className="logement-header">
+          <h2>{logement.title}</h2>
+          <p>{logement.location}</p>
+        </div>
         <div className="host-info">
           <img src={logement.host.picture} alt={logement.host.name} />
           <p>{logement.host.name}</p>
         </div>
-      </div>
-      <p>{logement.location}</p>
+      </section>
       <section className="logement-details">
         <div className="tag">
           {logement.tags.map((tag, index) => (

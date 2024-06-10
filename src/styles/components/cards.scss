@@ -21,8 +21,8 @@
     border: 1px solid #ddd;
     border-radius: 25px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    flex: 1 0 250px;
-    height: 300px;
+    flex: 1 0 calc(25% - 20px);
+    height: 350px;
     display: flex;
     flex-direction: column;
     justify-content: flex-end;
@@ -58,12 +58,12 @@
 
 @media (max-width: 768px) {
     .cards {
-        gap: 10px;
+        background: none;
     }
 
     .cards ul {
         margin: 10px;
-        gap: 10px;
+        gap: 24px;
     }
 
     .cards li {

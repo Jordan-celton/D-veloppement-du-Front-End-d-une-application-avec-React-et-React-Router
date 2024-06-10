@@ -25,11 +25,11 @@ p {
     margin: 0;
     font-family: $font-1;
 }
+
 .logement-details {
     display: flex;
     flex-direction: row;
     gap: 10px;
-    margin-top: 20px;
     justify-content: space-between;
 }
 
@@ -44,7 +44,7 @@ p {
     li {
         font-family: $font-1;
         margin-right: 10px;
-        padding: 5px 10px;
+        padding: 5px 20px;
         border-radius: 12px;
         background-color: $color-1;
         font-weight: bold;
@@ -68,16 +68,30 @@ span {
 .arrow.rotated {
     transform: rotate(180deg);
 }
-
-.logement-header {
+.details-location {
     display: flex;
     justify-content: space-between;
-    align-items: center;
+}
+
+.logement-header {
+    margin-top: 10px;
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    flex-direction: column;
+    h2 {
+        margin: 0;
+    }
+    p {
+        font-weight: bold;
+    }
 }
 
 .host-info {
     display: flex;
     align-items: center;
+    justify-content: flex-end;
+    flex-direction: row-reverse;
 }
 
 .host-info img {
@@ -98,36 +112,75 @@ span {
     gap: 10px;
 }
 
+/* Media Queries */
 @media (max-width: 768px) {
     .logement-header {
-        flex-direction: row;
-        justify-content: space-between;
+        flex-direction: column;
         align-items: flex-start;
+        display: flex;
+    }
+    .logement-details {
+        display: flex;
+        flex-direction: column;
     }
 
     .host-info {
-        display: flex;
+        flex-direction: row-reverse;
         align-items: center;
         margin-bottom: 10px;
     }
 
+    .host-info img {
+        margin: 0 0 10px 0;
+    }
+
     .stars {
-        width: auto;
-        margin-top: 0;
+        display: flex;
+        gap: 5px;
+        justify-content: flex-start;
     }
 
     .collapse-container {
-        display: flex;
-        justify-content: space-between;
-        gap: 76px;
-        margin-bottom: 30px;
+        flex-direction: column;
+        align-items: center;
+        gap: 20px;
+        margin-bottom: 20px;
     }
 
     .collapse-container > div {
-        flex: 1;
+        flex: none;
+        width: 100%;
     }
 
     .collapse-container > div:last-child {
         margin-right: 0;
+    }
+}
+
+@media (max-width: 480px) {
+    h3 {
+        flex-direction: column;
+        padding: 5px;
+        font-size: 1em;
+        text-align: center;
+    }
+
+    .tag li {
+        margin-right: 5px;
+        padding: 3px 5px;
+        border-radius: 8px;
+        font-size: 0.9em;
+    }
+
+    .host-info img {
+        width: 40px;
+        height: 40px;
+        margin: 0 auto;
+    }
+
+    .stars {
+        display: flex;
+        gap: 5px;
+        justify-content: flex-start;
     }
 }
