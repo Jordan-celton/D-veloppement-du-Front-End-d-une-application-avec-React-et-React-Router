@@ -1,5 +1,5 @@
-import React from "react";
-import { useParams } from "react-router-dom";
+import React, { useEffect } from "react";
+import { useParams, useNavigate } from "react-router-dom";
 import logementsData from "../components/logements.json";
 import Navigation from "../components/Navigation";
 import Footer from "../components/Footer";
@@ -10,7 +10,18 @@ import Collapse from "./Collapse";
 
 const Logement = () => {
   const { id } = useParams();
+  const navigate = useNavigate();
   const logement = logementsData.find((logement) => logement.id === id);
+
+  useEffect(() => {
+    if (!logement) {
+      navigate("/error");
+    }
+  }, [logement, navigate]);
+
+  if (!logement) {
+    return null; // Or you can return a loading spinner or a message
+  }
 
   const renderRatingStars = () => {
     const rating = parseInt(logement.rating);
