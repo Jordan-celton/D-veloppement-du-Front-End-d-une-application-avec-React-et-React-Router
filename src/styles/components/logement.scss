@@ -40,16 +40,16 @@ p {
     color: white;
     font-family: $font-1;
     gap: 10px;
-    height: 25px;
+    height: 10px;
+}
 
-    li {
-        font-family: $font-1;
-        margin-right: 10px;
-        padding: 5px 20px;
-        border-radius: 12px;
-        background-color: $color-1;
-        font-weight: bold;
-    }
+.tag li {
+    font-family: $font-1;
+    margin-right: 10px;
+    padding: 5px 20px;
+    border-radius: 12px;
+    background-color: $color-1;
+    font-weight: bold;
 }
 
 span {
@@ -69,6 +69,7 @@ span {
 .arrow.rotated {
     transform: rotate(180deg);
 }
+
 .details-location {
     display: flex;
     justify-content: space-between;
@@ -80,12 +81,14 @@ span {
     justify-content: flex-start;
     align-items: flex-start;
     flex-direction: column;
-    h2 {
-        margin: 0;
-    }
-    p {
-        font-weight: bold;
-    }
+}
+
+.logement-header h2 {
+    margin: 0;
+}
+
+.logement-header p {
+    font-weight: bold;
 }
 
 .host-info {
@@ -119,25 +122,31 @@ span {
     .logement-header {
         flex-direction: column;
         align-items: flex-start;
-        display: flex;
     }
+
     .logement-details {
-        display: flex;
         flex-direction: column;
     }
 
     .host-info {
+        margin: auto;
         flex-direction: row-reverse;
         align-items: center;
         margin-bottom: 10px;
+        position: relative;
+        bottom: -115px;
     }
 
     .host-info img {
         margin: 0 0 10px 0;
     }
 
-    .stars {
+    .tag {
         display: flex;
+        height: auto;
+    }
+
+    .stars {
         gap: 5px;
         justify-content: flex-start;
     }
@@ -181,7 +190,6 @@ span {
     }
 
     .stars {
-        display: flex;
         gap: 5px;
         justify-content: flex-start;
     }

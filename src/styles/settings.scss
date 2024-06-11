@@ -11,6 +11,7 @@ $background-color: black;
 * {
     padding: 0;
 }
+
 body {
     margin: 40px 40px 0 40px;
     overflow-x: hidden;
@@ -19,4 +20,14 @@ body {
 li {
     font-family: $font-1;
     list-style: none;
+}
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
