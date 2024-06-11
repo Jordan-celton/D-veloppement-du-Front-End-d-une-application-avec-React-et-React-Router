@@ -40,6 +40,7 @@ p {
     color: white;
     font-family: $font-1;
     gap: 10px;
+    height: 25px;
 
     li {
         font-family: $font-1;
@@ -110,6 +111,7 @@ span {
     display: flex;
     margin-top: 10px;
     gap: 10px;
+    margin-bottom: 15px;
 }
 
 /* Media Queries */
