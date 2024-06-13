@@ -89,7 +89,6 @@ const Logement = () => {
           }
         />
       </section>
-      {/* Pied de page */}
       <Footer />
     </div>
   );

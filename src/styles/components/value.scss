@@ -1,6 +1,10 @@
 .value-list {
     list-style-type: none;
     padding: 10px 60px;
+    min-height: 100vh;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
 }
 
 .value-item {
