@@ -31,6 +31,7 @@ p {
     flex-direction: row;
     gap: 10px;
     justify-content: space-between;
+    flex-wrap: wrap; /* Permet aux éléments de passer à la ligne si nécessaire */
 }
 
 .tag {
@@ -40,7 +41,7 @@ p {
     color: white;
     font-family: $font-1;
     gap: 10px;
-    height: 10px;
+    height: auto; /* Ajustement de la hauteur */
 }
 
 .tag li {
@@ -134,7 +135,7 @@ span {
         align-items: center;
         margin-bottom: 10px;
         position: relative;
-        bottom: -115px;
+        bottom: -100px;
     }
 
     .host-info img {
@@ -152,9 +153,7 @@ span {
     }
 
     .collapse-container {
-        flex-direction: column;
-        align-items: center;
-        gap: 20px;
+        display: block;
         margin-bottom: 20px;
     }
 

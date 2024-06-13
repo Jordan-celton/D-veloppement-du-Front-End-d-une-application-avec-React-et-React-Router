@@ -1,50 +1,52 @@
 import React, { useEffect, useRef, useState } from "react";
 
 const Slideshow = ({ pictures }) => {
-  const [currentSlide, setCurrentSlide] = useState(0); // État pour suivre la diapositive actuelle
-  const slideshowContainer = useRef(null); // Référence pour accéder au conteneur du diaporama
+  // État pour suivre la diapositive actuelle
+  const [currentSlide, setCurrentSlide] = useState(0);
+  // Référence au conteneur du diaporama
+  const slideshowContainer = useRef(null);
 
   useEffect(() => {
+    // Si le diaporama contient plus d'une image
     if (pictures.length > 1) {
+      // Récupère les boutons suivant et précédent
       const nextButton =
-        slideshowContainer.current.querySelector(".next-slide"); // Bouton pour passer à la diapositive suivante
+        slideshowContainer.current.querySelector(".next-slide");
       const prevButton =
-        slideshowContainer.current.querySelector(".prev-slide"); // Bouton pour revenir à la diapositive précédente
+        slideshowContainer.current.querySelector(".prev-slide");
 
-      // Fonction pour afficher les diapositives
+      // Fonction pour afficher la diapositive
       const showSlides = (n) => {
-        const slides = slideshowContainer.current.querySelectorAll(".slide"); // Toutes les diapositives
-        if (n >= slides.length) setCurrentSlide(0); // Si l'index dépasse le nombre de diapositives, revenir à la première
-        if (n < 0) setCurrentSlide(slides.length - 1); // Si l'index est négatif, aller à la dernière diapositive
+        // Récupère toutes les diapositives
+        const slides = slideshowContainer.current.querySelectorAll(".slide");
+        // Calcule l'index de la nouvelle diapositive
+        const newSlide = n >= slides.length ? 0 : n < 0 ? slides.length - 1 : n;
+        // Met à jour l'état de la diapositive actuelle
+        setCurrentSlide(newSlide);
+        // Affiche uniquement la nouvelle diapositive et cache les autres
         slides.forEach((slide, index) => {
-          slide.style.display = index === currentSlide ? "block" : "none"; // Afficher la diapositive courante et masquer les autres
+          slide.style.display = index === newSlide ? "block" : "none";
         });
       };
 
       // Fonction pour passer à la diapositive suivante
       const nextSlide = () => {
-        setCurrentSlide((prevSlide) => {
-          const newSlide = prevSlide + 1;
-          showSlides(newSlide);
-          return newSlide >= pictures.length ? 0 : newSlide; // Si on dépasse la dernière diapositive, revenir à la première
-        });
+        showSlides(currentSlide + 1);
       };
 
       // Fonction pour revenir à la diapositive précédente
       const prevSlide = () => {
-        setCurrentSlide((prevSlide) => {
-          const newSlide = prevSlide - 1;
-          showSlides(newSlide);
-          return newSlide < 0 ? pictures.length - 1 : newSlide; // Si on dépasse la première diapositive, aller à la dernière
-        });
+        showSlides(currentSlide - 1);
       };
 
+      // Ajoute les gestionnaires d'événements aux boutons
       nextButton.addEventListener("click", nextSlide);
       prevButton.addEventListener("click", prevSlide);
 
-      // Afficher la diapositive courante
+      // Affiche la diapositive initiale
       showSlides(currentSlide);
 
+      // Nettoie les gestionnaires d'événements lors du démontage du composant
       return () => {
         nextButton.removeEventListener("click", nextSlide);
         prevButton.removeEventListener("click", prevSlide);
@@ -54,12 +56,19 @@ const Slideshow = ({ pictures }) => {
 
   return (
     <section className="slideshow" ref={slideshowContainer}>
-      {/* Afficher le bouton précédent si plus d'une diapositive */}
+      {/* Affiche le bouton précédent si plus d'une image */}
       {pictures.length > 1 && <button className="prev-slide">&#10094;</button>}
       <div className="slides">
+        {/* Génère les diapositives */}
         {pictures.map((picture, index) => (
-          <div key={index} className="slide">
+          <div
+            key={index}
+            className="slide"
+            style={{ display: index === currentSlide ? "block" : "none" }}
+          >
+            {/* Affiche l'image de la diapositive */}
             <img src={picture} alt={`Diapositive ${index}`} />
+            {/* Affiche la légende si plus d'une image */}
             {pictures.length > 1 && (
               <div className="caption">
                 {`${currentSlide + 1} / ${pictures.length}`}
@@ -68,6 +77,7 @@ const Slideshow = ({ pictures }) => {
           </div>
         ))}
       </div>
+      {/* Affiche le bouton suivant si plus d'une image */}
       {pictures.length > 1 && <button className="next-slide">&#10095;</button>}
     </section>
   );
