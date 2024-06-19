@@ -1,16 +1,17 @@
 import React from "react";
-import Navigation from "../components/Navigation";
-import Footer from "../components/Footer";
-import BannerAbout from "../components/BannerAbout";
+import BannerGeneric from "../components/BannerGeneric";
 import Value from "../components/Value";
+import aboutImage from "../assets/images/about.png";
 
 const About = () => {
   return (
     <div>
-      <Navigation />
-      <BannerAbout />
+      <BannerGeneric
+        imageSrc={aboutImage}
+        imageAlt="Photo d'une vallée montagneuse"
+        backgroundImage={false}
+      />
       <Value />
-      <Footer />
     </div>
   );
 };

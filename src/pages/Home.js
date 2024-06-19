@@ -1,16 +1,15 @@
 import React from "react";
-import Navigation from "../components/Navigation";
-import Banner from "../components/Banner";
+import BannerGeneric from "../components/BannerGeneric";
 import Card from "../components/Card";
-import Footer from "../components/Footer";
 
 const Home = () => {
   return (
     <div>
-      <Navigation />
-      <Banner />
+      <BannerGeneric
+        title="Chez vous, partout et ailleurs"
+        backgroundImage={true}
+      />
       <Card />
-      <Footer />
     </div>
   );
 };

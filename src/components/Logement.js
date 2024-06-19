@@ -1,8 +1,6 @@
 import React, { useEffect } from "react";
 import { useParams, useNavigate } from "react-router-dom";
-import logementsData from "../components/logements.json";
-import Navigation from "../components/Navigation";
-import Footer from "../components/Footer";
+import logementsData from "../assets/data/logements.json";
 import Slideshow from "../components/Slideshow";
 import starsRating from "../assets/icon/Vector.png";
 import starsInactive from "../assets/icon/starInactive.png";
@@ -45,10 +43,13 @@ const Logement = () => {
     return stars;
   };
 
+  // Si le logement n'est pas trouvé, ne pas rendre le reste du composant dans ce cas je retourne sur la page erreur.
+  if (!logement) {
+    return null;
+  }
+
   return (
     <div>
-      {/* Composant de navigation */}
-      <Navigation />
       {/* Diaporama des images du logement */}
       <Slideshow pictures={logement.pictures} />
       <section className="details-location">
@@ -89,7 +90,6 @@ const Logement = () => {
           }
         />
       </section>
-      <Footer />
     </div>
   );
 };

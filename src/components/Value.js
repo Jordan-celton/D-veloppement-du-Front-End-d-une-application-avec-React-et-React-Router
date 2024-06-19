@@ -1,7 +1,7 @@
 // importe React et la fonction useState depuis la bibliothèque React.
 import React, { useState } from "react";
 import arrowIcon from "../assets/icon/arrow.png"; // Import de l'icône de flèche
-import aboutData from "./about.json"; // Import des données sur les valeurs depuis un fichier JSON
+import aboutData from "../assets/data/about.json"; // Import des données sur les valeurs depuis un fichier JSON
 
 const Value = () => {
   const [openIndexes, setOpenIndexes] = useState([]);

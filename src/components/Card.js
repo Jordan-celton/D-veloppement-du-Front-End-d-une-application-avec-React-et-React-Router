@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
-import logementsData from "./logements.json";
+import logementsData from "../assets/data/logements.json";
 
 // Composant fonctionnel Card
 const Card = () => {
