@@ -9,6 +9,16 @@ Cloner le dépôt Git :
 ```bash
 git clone https://github.com/Jordan-celton/P7.git
 ```
+```bash
+cd votre-projet 
+```
+```bash
+npm install
+```
+```bash
+npm start
+```
+L'application sera accessible sur http://localhost:3000.
 
 ## ✨ Fonctionnalités clés
 - Composants réutilisables : Structure claire et évolutive pour le front-end.
