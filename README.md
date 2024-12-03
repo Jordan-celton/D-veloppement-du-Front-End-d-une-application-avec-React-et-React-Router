@@ -12,8 +12,8 @@ git clone https://github.com/Jordan-celton/P7.git
 Se déplacer dans le dossier du projet :
 ```bash
 cd votre-projet
-Installer les dépendances nécessaires :
 ```
+Installer les dépendances nécessaires :
 ```bash
 npm install
 ```
