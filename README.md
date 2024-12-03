@@ -9,12 +9,15 @@ Cloner le dépôt Git :
 ```bash
 git clone https://github.com/Jordan-celton/P7.git
 ```
+Se déplacer dans le dossier du projet :
 ```bash
-cd votre-projet 
+cd votre-projet
+Installer les dépendances nécessaires :
 ```
 ```bash
 npm install
 ```
+Démarrer l'application en local :
 ```bash
 npm start
 ```
