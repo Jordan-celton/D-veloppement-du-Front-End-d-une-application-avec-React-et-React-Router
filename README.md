@@ -1,70 +1,80 @@
-# Getting Started with Create React App
+# 🖥️ Développement du Front-End d'une application avec React et React Router
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Dans ce projet, j'ai développé le front-end d'une application web moderne en utilisant React et React Router, tout en mettant l'accent sur une expérience utilisateur réactive et intuitive.
 
-## Available Scripts
+## 📝 Instructions d'installation
 
-In the project directory, you can run:
+Cloner le dépôt Git :
 
-### `npm start`
+```bash
+git clone https://github.com/Jordan-celton/P7.git
+```
+Se déplacer dans le dossier du projet :
+```bash
+cd votre-projet
+```
+Installer les dépendances nécessaires :
+```bash
+npm install
+```
+Démarrer l'application en local :
+```bash
+npm start
+```
+L'application sera accessible sur http://localhost:3000.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+## ✨ Fonctionnalités clés
+- Composants réutilisables : Structure claire et évolutive pour le front-end.
+- Routage dynamique : Navigation entre plusieurs pages de l'application via React Router.
+- Design responsive : Interface adaptée aux différentes tailles d’écran.
+- Données simulées : Chargement de contenu à partir d’un fichier JSON.
+- Animations CSS : Amélioration de l'expérience utilisateur.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## Technologies utilisées
 
-### `npm test`
+- React
+- React Router
+- SASS
+- Node.js
+- Create React App
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## 📂 Arborescence du projet
 
-### `npm run build`
+```bash
+📦 votre-projet  
+├── 📁 public  
+├── 📁 src  
+│   ├── 📁 components        # Composants React  
+│   ├── 📁 pages             # Pages de l'application  
+│   ├── 📁 assets            # Images et ressources  
+│   ├── 📁 styles            # Fichiers CSS/SASS  
+│   └── App.js               # Composant principal  
+├── package.json             # Dépendances et scripts  
+└── README.md                # Documentation du projet  
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+```
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+## 🤝 Contribuer
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+Les contributions sont les bienvenues ! Pour toute suggestion ou amélioration, suivez ces étapes :
 
-### `npm run eject`
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+- Forkez le projet.
+- Créez une nouvelle branche pour vos modifications.
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+```bash
+git checkout -b feature-nouvelle-fonctionnalite
+```
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+- Effectuez vos modifications et poussez-les :
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+```bash
+git commit -m "Ajout d'une nouvelle fonctionnalité"
+git push origin feature-nouvelle-fonctionnalite
+```
+- Ouvrez une Pull Request pour examen.
 
-## Learn More
+## 📜 License
+Ce projet est sous la licence MIT. Vous êtes libre de l'utiliser, de le modifier et de le distribuer selon les termes de cette licence.
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+[MIT](https://choosealicense.com/licenses/mit/)
